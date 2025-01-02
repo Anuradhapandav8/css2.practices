@@ -15,12 +15,32 @@
 .ticket {
     width: 400px;
     margin: 30px auto;
-    background-color: #e1ac18;
     padding: 20px;
-    border: 1px solid #760202;
-    box-shadow: 0 0 10px rgba(13, 3, 48, 0.1);
+font-family: Arial, Helvetica, sans-serif;
+    display: flex;
 }
 
+.event-part{
+    width: 60%;
+    border: 3px solid #3e474a;
+    box-shadow: 0 0 10px rgba(13, 3, 48, 0.1);
+    border-right: none;
+    padding-left: 20px;
+    background-color: #645c57;
+
+}
+.user-part{
+    width: 40%;
+    border: 3px solid #393a45;
+    box-shadow: 0 0 10px rgba(13, 3, 48, 0.1);
+    border-right: dashed;
+    padding-left: 20px;
+    background-color: #665b56;
+}
+.ticket-number{
+    font-family:'Courier New', Courier, monospace ;
+    padding-left: 20px;
+}
 .header {
     display: flex;
     margin-bottom: 20px;
@@ -31,24 +51,26 @@
     height: 70px;
     margin-right: 11px;
 }
-
-.info {
-    margin-bottom: 30px;
+/* mobile */
+@media(max-width: 600px)
+{
+    .ticket{
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        width: auto;
+    }
+    .user-part{
+        width: 450px;
+        border-right: solid;
+        border-bottom: none;
+    }
+    .event-part{
+        width: 500px;
+        border-top: dashed ;
+        border-left: solid;
+    }
 }
-
-.info p {
-    margin-bottom: 10px;
-}
-
-.footer {
-    font-size: 12px;
-    color: #8994eb;
-}
-
-.footer p {
-    margin-bottom: 6px;
-}
-
 @media only screen and (max-width: 768px) {
     .ticket {
         width: 80%;
@@ -61,23 +83,59 @@
         width: 200%;
         margin: 20px auto;
     }
-    .header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
+    
     .logo {
         margin-bottom: 20px;
     }
 }
 
+/* tablet */
+@media (min-width: 601px) and (max-width: 800px){
+    .ticket{
+        background-color: rgb(140, 157, 157);
+    }
+    .ticket{
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        width: auto;
+    }
+    .user-part{
+        width: 600px;
+        border-right: solid;
+        border-bottom: none;
+    }
+    .event-part{
+        width: 600px;
+        border-top: dashed ;
+        border-left: solid;
+
+    }
+}
+/* laptop */
+.ticket{
+        background-color: rgb(104, 118, 118);
+    }
+
+    .user-part{
+        width: 300px;
+       
+    }
+    .event-part{
+        width: 500px;
+    
+
+    }
+
+
 </style>
 <body>
     <div class="ticket">
-        <div class="header">
+        <div class="user-part">
+            <span class="ticket-number">ticket no: 1234567 </span>
+            <h4>  SVIT college Event  Anual cultural Ticket</h4>
             <img src="https://img.jagranjosh.com/images/2024/April/1042024/Logo_of_Sir_Visvesvaraya_Institute_of_Technology_Nashik_Logo.png" alt="College Logo" class="logo">
-            <h4>  SVIT college Event Ticket</h4>
-        </div>
-        <div class="info">
+
             <p>Name:  pandav anuradha</p>
             <p>College ID: </p>
             <p>Event Name: Annual Cultural </p>
@@ -85,10 +143,17 @@
             <p>Time: 13:00 AM</p>
             <p>Venue: College Auditorium</p>
         </div>
-        <div class="footer">
-            <p>Please bring this ticket to the event.</p>
-            <p>Valid only for the mentioned event and date.</p>
+        <div class="event-part">
+            <span class="ticket-number">ticket no: 1234567</span>
+
+            <h4>  SVIT college Event Annual Cultural</h4>
+            <img src="https://img.jagranjosh.com/images/2024/April/1042024/Logo_of_Sir_Visvesvaraya_Institute_of_Technology_Nashik_Logo.png" alt="College Logo" class="logo">
+            <p>Name:  pandav anuradha</p>
+            <p>College ID: </p>
+            <p>Event Name: Annual Cultural </p>
+            <p>Date: 11th dec 2024</p>
+            <p>Time: 13:00 AM</p>
+            <p>Venue: College Auditorium</p>
         </div>
-    </div>
 </body>
 </html>
