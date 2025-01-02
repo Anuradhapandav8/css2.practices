@@ -4,156 +4,167 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>College Event Ticket</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .ticket {
+            width: 80%;
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+            display: flex;
+            background-color: #fff;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .event-part {
+            width: 60%;
+            border: 3px solid #3e474a;
+            box-shadow: 0 0 10px rgba(13, 3, 48, 0.1);
+            border-right: none;
+            padding-left: 20px;
+            background-color: #645c57;
+        }
+
+        .user-part {
+            width: 40%;
+            border: 3px solid #393a45;
+            box-shadow: 0 0 10px rgba(13, 3, 48, 0.1);
+            border-right: dashed;
+            padding-left: 20px;
+            background-color: #665b56;
+        }
+
+        .ticket-number {
+            font-family: 'Courier New', Courier, monospace;
+            padding-left: 20px;
+            font-size: 1.1rem;
+        }
+
+        .header {
+            display: flex;
+            margin-bottom: 20px;
+        }
+
+        .logo {
+            width: 60px;
+            height: 70px;
+            margin-right: 11px;
+        }
+
+        .ticket h4 {
+            font-size: 1.4rem;
+            margin: 10px 0;
+            color: #fff;
+        }
+
+        .ticket p {
+            font-size: 1rem;
+            color: #fff;
+            margin: 5px 0;
+        }
+
+        /* Mobile */
+        @media(max-width: 600px) {
+            .ticket {
+                flex-direction: column;
+                align-items: center;
+                padding: 10px;
+            }
+
+            .user-part,
+            .event-part {
+                width: 100%;
+                border-right: none;
+                border-bottom: solid 2px #393a45;
+                padding-left: 20px;
+            }
+
+            .user-part {
+                border-bottom: solid 2px #393a45;
+                margin-bottom: 20px;
+            }
+            
+            .event-part {
+                border-top: dashed 2px #3e474a;
+            }
+
+            .logo {
+                margin-bottom: 20px;
+                width: 50px;
+                height: 60px;
+            }
+        }
+
+        /* Tablet */
+        @media (min-width: 601px) and (max-width: 800px) {
+            .ticket {
+                flex-direction: column;
+                width: 80%;
+            }
+
+            .user-part,
+            .event-part {
+                width: 100%;
+                padding-left: 20px;
+            }
+
+            .event-part {
+                border-top: dashed 2px #3e474a;
+                border-left: solid 2px #3e474a;
+            }
+
+            .user-part {
+                border-right: solid 2px #393a45;
+            }
+        }
+
+        /* Desktop */
+        .ticket {
+            display: flex;
+        }
+
+        .user-part {
+            width: 40%;
+            border-right: dashed 2px #393a45;
+        }
+
+        .event-part {
+            width: 60%;
+            border-left: solid 2px #3e474a;
+        }
+    </style>
 </head>
-<style>
-    body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-}
-
-.ticket {
-    width: 400px;
-    margin: 30px auto;
-    padding: 20px;
-font-family: Arial, Helvetica, sans-serif;
-    display: flex;
-}
-
-.event-part{
-    width: 60%;
-    border: 3px solid #3e474a;
-    box-shadow: 0 0 10px rgba(13, 3, 48, 0.1);
-    border-right: none;
-    padding-left: 20px;
-    background-color: #645c57;
-
-}
-.user-part{
-    width: 40%;
-    border: 3px solid #393a45;
-    box-shadow: 0 0 10px rgba(13, 3, 48, 0.1);
-    border-right: dashed;
-    padding-left: 20px;
-    background-color: #665b56;
-}
-.ticket-number{
-    font-family:'Courier New', Courier, monospace ;
-    padding-left: 20px;
-}
-.header {
-    display: flex;
-    margin-bottom: 20px;
-}
-
-.logo {
-    width: 60px;
-    height: 70px;
-    margin-right: 11px;
-}
-/* mobile */
-@media(max-width: 600px)
-{
-    .ticket{
-        flex-direction: column;
-        align-items: center;
-        height: auto;
-        width: auto;
-    }
-    .user-part{
-        width: 450px;
-        border-right: solid;
-        border-bottom: none;
-    }
-    .event-part{
-        width: 500px;
-        border-top: dashed ;
-        border-left: solid;
-    }
-}
-@media only screen and (max-width: 768px) {
-    .ticket {
-        width: 80%;
-        margin: 30px auto;
-    }
-}
-
-@media only screen and (max-width: 480px) {
-    .ticket {
-        width: 200%;
-        margin: 20px auto;
-    }
-    
-    .logo {
-        margin-bottom: 20px;
-    }
-}
-
-/* tablet */
-@media (min-width: 601px) and (max-width: 800px){
-    .ticket{
-        background-color: rgb(140, 157, 157);
-    }
-    .ticket{
-        flex-direction: column;
-        align-items: center;
-        height: auto;
-        width: auto;
-    }
-    .user-part{
-        width: 600px;
-        border-right: solid;
-        border-bottom: none;
-    }
-    .event-part{
-        width: 600px;
-        border-top: dashed ;
-        border-left: solid;
-
-    }
-}
-/* laptop */
-.ticket{
-        background-color: rgb(104, 118, 118);
-    }
-
-    .user-part{
-        width: 300px;
-       
-    }
-    .event-part{
-        width: 500px;
-    
-
-    }
-
-
-</style>
 <body>
     <div class="ticket">
         <div class="user-part">
-            <span class="ticket-number">ticket no: 1234567 </span>
-            <h4>  SVIT college Event  Anual cultural Ticket</h4>
+            <span class="ticket-number">Ticket No: 1234567</span>
+            <h4>SVIT College Event - Annual Cultural Ticket</h4>
             <img src="https://img.jagranjosh.com/images/2024/April/1042024/Logo_of_Sir_Visvesvaraya_Institute_of_Technology_Nashik_Logo.png" alt="College Logo" class="logo">
-
-            <p>Name:  pandav anuradha</p>
-            <p>College ID: </p>
-            <p>Event Name: Annual Cultural </p>
-            <p>Date: 11th dec 2024</p>
+            <p>Name: Pandav Anuradha</p>
+            <p>College ID: 123456</p>
+            <p>Event Name: Annual Cultural</p>
+            <p>Date: 11th Dec 2024</p>
             <p>Time: 13:00 AM</p>
             <p>Venue: College Auditorium</p>
         </div>
         <div class="event-part">
-            <span class="ticket-number">ticket no: 1234567</span>
-
-            <h4>  SVIT college Event Annual Cultural</h4>
+            <span class="ticket-number">Ticket No: 1234567</span>
+            <h4>SVIT College Event - Annual Cultural</h4>
             <img src="https://img.jagranjosh.com/images/2024/April/1042024/Logo_of_Sir_Visvesvaraya_Institute_of_Technology_Nashik_Logo.png" alt="College Logo" class="logo">
-            <p>Name:  pandav anuradha</p>
-            <p>College ID: </p>
-            <p>Event Name: Annual Cultural </p>
-            <p>Date: 11th dec 2024</p>
+            <p>Name: Pandav Anuradha</p>
+            <p>College ID: 123456</p>
+            <p>Event Name: Annual Cultural</p>
+            <p>Date: 11th Dec 2024</p>
             <p>Time: 13:00 AM</p>
             <p>Venue: College Auditorium</p>
         </div>
+    </div>
 </body>
 </html>
